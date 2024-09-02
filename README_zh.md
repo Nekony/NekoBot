@@ -1,4 +1,5 @@
 # NekoBot
+[en](https://github.com/Nekony/NekoBot/blob/main/README.md) / zh
 ## 介绍
 NekoBot是一个为音游而设计的QQ机器人。
 目前，机器人的版本是1.0.0
