@@ -4,10 +4,13 @@ import sys
 import decimal
 import random
 
+sys.path.append('./src/libraries/')
+
 import botpy
 from botpy import logging
 from botpy.ext.cog_yaml import read
 from botpy.message import Message
+from maimaib50 import generate50 # type: ignore
 
 test_config = read(os.path.join(os.path.dirname(__file__), "config.yaml"))
 
@@ -157,6 +160,17 @@ class MyClient(botpy.Client):
                 temp_str_2 = temp_str_2 + f"{list_2[(d)]} "
             await message.reply(content=f"{temp_str_2}")
             await message.reply(content="喵~")
+        if "/b50" in message.content:
+            payload ={}
+            str3 = message.content
+            str4 = str3.split()
+            payload['username'] = f"{str4[2]}"
+            payload['b50'] = "True"
+            print(payload)
+            await generate50(payload)
+            await message.reply(content=f"", file_image="./1.png")
+            await os.remove("./1.png")
+            await message.reply(content="b50来了喵~")
         #输出触发Bot者名称
         _log.info(message.author.username)
 
