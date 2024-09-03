@@ -14,80 +14,79 @@ test_config = read(os.path.join(os.path.dirname(__file__), "config.yaml"))
 _log = logging.get_logger()
 
 
-#判断Rating因子
-def score_multiplier(acc):
-    score = 0
-    match acc:
-        case(acc) if acc - 100.5 >= 0:
-            score = 0.244
-            #SSS+
-        case(acc) if acc - 100.4999 >= 0 > acc - 100.5:
-            score = 0.222
-            #SSS
-        case(acc) if acc - 100 >= 0 > acc - 100.4999:
-            score = 0.216
-            #SSS
-        case(acc) if acc - 99.9999 >= 0 > acc - 100:
-            score = 0.214
-            #SS+
-        case(acc) if acc - 99.5 >= 0 > acc - 100:
-            score = 0.211
-            #SS+
-        case(acc) if acc - 99 >= 0 > acc - 99.5:
-            score = 0.208
-            #SS
-        case(acc) if acc - 98.9999 >= 0 > acc - 99:
-            score = 0.206
-            #S+
-        case(acc) if acc - 98 >= 0 > acc - 98.9999:
-            score = 0.203
-            #S+
-        case(acc) if acc - 97 >= 0 > acc - 98:
-            score = 0.2
-            #S
-        case(acc) if acc - 96.9999 >= 0 > acc - 97:
-            score = 0.176
-            #AAA
-        case(acc) if acc - 94 >= 0 > acc - 96.9999:
-            score = 0.168
-            #AAA
-        case(acc) if acc - 90 >= 0 > acc - 94:
-            score = 0.152
-            #AA
-        case(acc) if acc - 80 >= 0 > acc - 90:
-            score = 0.136
-            #A
-        case(acc) if acc - 79.9999 >= 0 > acc - 80:
-            score = 0.128
-            #BBB
-        case(acc) if acc - 75 >= 0 > acc - 79.9999:
-            score = 0.120
-            #BBB
-        case(acc) if acc - 70 >= 0 > acc - 75:
-            score = 0.112
-            #BB
-        case(acc) if acc - 60 >= 0 > acc - 70:
-            score = 0.096
-            #B
-        case(acc) if acc - 50 >= 0 > acc - 60:
-            score = 0.08
-            #C
-        case(acc) if acc - 40 >= 0 > acc - 50:
-            score = 0.064
-            #D
-        case(acc) if acc - 30 >= 0 > acc - 40:
-            score = 0.048
-            #D
-        case(acc) if acc - 20 >= 0 > acc - 30:
-            score = 0.032
-            #D
-        case(acc) if acc - 10 >= 0 > acc - 20:
-            score = 0.016
-            #D
-
-    return score
-
 def mai_rating(grading, acc):
+    #判断Rating因子
+    def score_multiplier(acc):
+        score = 0
+        match acc:
+            case(acc) if acc - 100.5 >= 0:
+                score = 0.244
+                #SSS+
+            case(acc) if acc - 100.4999 >= 0 > acc - 100.5:
+                score = 0.222
+                #SSS
+            case(acc) if acc - 100 >= 0 > acc - 100.4999:
+                score = 0.216
+                #SSS
+            case(acc) if acc - 99.9999 >= 0 > acc - 100:
+                score = 0.214
+                #SS+
+            case(acc) if acc - 99.5 >= 0 > acc - 100:
+                score = 0.211
+                #SS+
+            case(acc) if acc - 99 >= 0 > acc - 99.5:
+                score = 0.208
+                #SS
+            case(acc) if acc - 98.9999 >= 0 > acc - 99:
+                score = 0.206
+                #S+
+            case(acc) if acc - 98 >= 0 > acc - 98.9999:
+                score = 0.203
+                #S+
+            case(acc) if acc - 97 >= 0 > acc - 98:
+                score = 0.2
+                #S
+            case(acc) if acc - 96.9999 >= 0 > acc - 97:
+                score = 0.176
+                #AAA
+            case(acc) if acc - 94 >= 0 > acc - 96.9999:
+                score = 0.168
+                #AAA
+            case(acc) if acc - 90 >= 0 > acc - 94:
+                score = 0.152
+                #AA
+            case(acc) if acc - 80 >= 0 > acc - 90:
+                score = 0.136
+                #A
+            case(acc) if acc - 79.9999 >= 0 > acc - 80:
+                score = 0.128
+                #BBB
+            case(acc) if acc - 75 >= 0 > acc - 79.9999:
+                score = 0.120
+                #BBB
+            case(acc) if acc - 70 >= 0 > acc - 75:
+                score = 0.112
+                #BB
+            case(acc) if acc - 60 >= 0 > acc - 70:
+                score = 0.096
+                #B
+            case(acc) if acc - 50 >= 0 > acc - 60:
+                score = 0.08
+                #C
+            case(acc) if acc - 40 >= 0 > acc - 50:
+                score = 0.064
+                #D
+            case(acc) if acc - 30 >= 0 > acc - 40:
+                score = 0.048
+                #D
+            case(acc) if acc - 20 >= 0 > acc - 30:
+                score = 0.032
+                #D
+            case(acc) if acc - 10 >= 0 > acc - 20:
+                score = 0.016
+                #D
+
+        return score
     decimal_acc = decimal.Decimal(acc)
     multiplier = decimal.Decimal(score_multiplier(acc))
     rating = grading * decimal_acc * multiplier
