@@ -13,6 +13,7 @@ test_config = read(os.path.join(os.path.dirname(__file__), "config.yaml"))
 
 _log = logging.get_logger()
 
+maimai_list = ['拼机', '推分', '越级', '夜勤', '练底力', '练手法', '干饭', '抓绝赞', '收歌']
 
 def mai_rating(grading, acc):
     #判断Rating因子
@@ -133,6 +134,27 @@ class MyClient(botpy.Client):
                 case (temp_random) if temp_random == 6:
                     await message.reply(content="吃饭去喵~")
             print(f"今日份：{temp_random}")
+        #给出 宜/忌
+        if "/舞萌运势" in message.content:
+            temp_1 = random.randint(1, 3)
+            temp_2 = random.randint(1, 3)
+            list_1 = []
+            list_2 = []
+            for a in range(1, (temp_1 + 1)):
+                list_1.append(maimai_list[random.randint(0, len(maimai_list)) - 1])
+            for b in range(1, (temp_2 + 1)):
+                list_2.append(maimai_list[random.randint(0, len(maimai_list)) - 1])
+            list_1 = list(set(list_1))
+            list_2 = list(set(list_2))
+            temp_str_1 = "宜：" + f"{list_1[0]} "
+            for c in range(1, len(list_1)):
+                temp_str_1 = temp_str_1 + f"{list_1[(c)]} "
+            await message.reply(content=f"{temp_str_1}")
+            temp_str_2 = "忌：" + f"{list_2[0]} "
+            for d in range(1, len(list_2)):
+                temp_str_2 = temp_str_2 + f"{list_2[(d)]} "
+            await message.reply(content=f"{temp_str_2}")
+            await message.reply(content="喵~")
         #输出触发Bot者名称
         _log.info(message.author.username)
 

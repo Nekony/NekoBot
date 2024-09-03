@@ -14,9 +14,8 @@ More features may be added in the future
 
 - "/rating" /rating `Grading` `ACC`
 - "/今日份的舞萌" /今日份的舞萌
+- "/舞萌运势" /舞萌运势
 
 ## Possible future updates
-
-"/舞萌运势" Give advice on what to do and what not to do
 
 ...
