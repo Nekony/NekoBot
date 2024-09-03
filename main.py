@@ -96,16 +96,19 @@ def mai_rating(grading, acc):
 
 
 class MyClient(botpy.Client):
+    #在Bot准备好后输出一条消息
     async def on_ready(self):
         _log.info(f"「{self.robot.name}」准备好了喵~")
 
     async def on_at_message_create(self, message: Message):
         _log.info(message.author.avatar)
+        #让频道主可以远程关闭程序
         if "下线" in message.content:
             if "Neko" in message.author.username:
                 await message.reply(content="下班喵~")
                 sys.exit(0)
-        if "/mai" in message.content:
+        #计算单曲rating
+        if "/rating" in message.content:
             str1 = message.content
             str2 = str1.split()
             grading = decimal.Decimal(str2[2])
@@ -114,6 +117,7 @@ class MyClient(botpy.Client):
             await message.reply(content=f"此曲Rating是 {rating}")
             await message.reply(content="喵~")
             print(f"Rating:{rating}")
+        #给出随机建议
         if "/今日份的舞萌" in message.content:
             temp_random = random.randint(1, 6)
             match temp_random:
@@ -130,6 +134,7 @@ class MyClient(botpy.Client):
                 case (temp_random) if temp_random == 6:
                     await message.reply(content="吃饭去喵~")
             print(f"今日份：{temp_random}")
+        #输出触发Bot者名称
         _log.info(message.author.username)
 
 
