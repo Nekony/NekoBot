@@ -107,6 +107,8 @@ class MyClient(botpy.Client):
             if "Neko" in message.author.username:
                 await message.reply(content="下班喵~")
                 sys.exit(0)
+            else:
+                await message.reply(content="你谁喵~")
         #计算单曲rating
         if "/rating" in message.content:
             str1 = message.content
