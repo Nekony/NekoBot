@@ -4,13 +4,13 @@ import sys
 import decimal
 import random
 
-sys.path.append('./src/libraries/')
-
 import botpy
 from botpy import logging
 from botpy.ext.cog_yaml import read
 from botpy.message import Message
 from maimaib50 import generate50 # type: ignore
+
+sys.path.append('./src/libraries/')
 
 test_config = read(os.path.join(os.path.dirname(__file__), "config.yaml"))
 
@@ -18,6 +18,7 @@ _log = logging.get_logger()
 
 maimai_list = ['拼机', '推分', '越级', '夜勤', '练底力', '练手法', '干饭', '抓绝赞', '收歌']
 
+#计算单曲rating的函数
 def mai_rating(grading, acc):
     #判断Rating因子
     def score_multiplier(acc):
@@ -160,6 +161,7 @@ class MyClient(botpy.Client):
                 temp_str_2 = temp_str_2 + f"{list_2[(d)]} "
             await message.reply(content=f"{temp_str_2}")
             await message.reply(content="喵~")
+        #从水鱼查分器拿到b50并绘制成图
         if "/b50" in message.content:
             payload ={}
             str3 = message.content
@@ -173,6 +175,7 @@ class MyClient(botpy.Client):
             bool_1 = os.path.isfile("./1.png")
             if bool_1:
                 await os.remove("./1.png")
+        #给出一个有概率的0-100的幸运值
         if "/lucky" in message.content:
             luck_temp_1 = random.randint(1, 100)
             match luck_temp_1:

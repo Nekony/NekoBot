@@ -756,3 +756,38 @@
 2024-09-04 20:33:32,639	[INFO]	(gateway.py:175)ws_resume	[botpy] 重连启动...
 2024-09-04 20:33:32,736	[INFO]	(gateway.py:90)on_message	[botpy] 机器人重连成功! 
 2024-09-04 20:33:32,736	[INFO]	(gateway.py:223)_send_heart	[botpy] 心跳维持启动...
+2024-09-04 20:41:09,640	[INFO]	(client.py:162)_bot_login	[botpy] 登录机器人账号中...
+2024-09-04 20:41:09,843	[INFO]	(robot.py:65)update_access_token	[botpy] access_token expires_in 2095
+2024-09-04 20:41:10,320	[INFO]	(client.py:181)_bot_init	[botpy] 程序启动...
+2024-09-04 20:41:10,321	[INFO]	(connection.py:60)multi_run	[botpy] 最大并发连接数: 1, 启动会话数: 1
+2024-09-04 20:41:10,321	[INFO]	(client.py:242)bot_connect	[botpy] 会话启动中...
+2024-09-04 20:41:10,321	[INFO]	(gateway.py:115)ws_connect	[botpy] 启动中...
+2024-09-04 20:41:10,496	[INFO]	(gateway.py:142)ws_identify	[botpy] 鉴权中...
+2024-09-04 20:41:10,604	[INFO]	(gateway.py:85)on_message	[botpy] 机器人「NekoBot-测试中」启动成功！
+2024-09-04 20:41:10,604	[INFO]	(gateway.py:223)_send_heart	[botpy] 心跳维持启动...
+2024-09-04 20:41:10,605	[INFO]	(main.py:104)on_ready	「NekoBot-测试中」准备好了喵~
+2024-09-04 20:42:54,538	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:42:55,679	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:44:28,414	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:44:29,511	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:48:59,034	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:49:00,373	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:49:07,097	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:49:08,149	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:49:17,144	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:49:18,203	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:49:34,718	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:49:35,734	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:49:40,781	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:49:41,760	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:49:46,825	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:49:47,879	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:49:52,858	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:50:02,906	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:50:03,900	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:50:09,440	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:50:10,412	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:50:36,070	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:50:37,107	[INFO]	(main.py:198)on_at_message_create	Neko
+2024-09-04 20:50:47,614	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:50:48,690	[INFO]	(main.py:198)on_at_message_create	Neko
