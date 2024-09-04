@@ -173,6 +173,8 @@ class MyClient(botpy.Client):
             bool_1 = os.path.isfile("./1.png")
             if bool_1:
                 await os.remove("./1.png")
+        if "/lucky" in message.content:
+            await message.reply(content=f"你的幸运值 {random.randint(0, 100)} 喵~")
         #输出触发Bot者名称
         _log.info(message.author.username)
 
