@@ -6,7 +6,7 @@ en / [zh](https://github.com/Nekony/NekoBot/blob/main/README_zh.md)
 
 NekoBot is a QQ bot designed for music games.
 
-Now, this bot is version 1.2.0
+Now, this bot is version 1.3.0
 
 More features may be added in the future
 
