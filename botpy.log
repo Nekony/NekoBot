@@ -666,3 +666,93 @@
 2024-09-04 18:42:43,179	[INFO]	(main.py:104)on_ready	「NekoBot-测试中」准备好了喵~
 2024-09-04 18:42:49,208	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
 2024-09-04 18:42:49,814	[INFO]	(main.py:179)on_at_message_create	Neko
+2024-09-04 18:45:59,458	[INFO]	(client.py:162)_bot_login	[botpy] 登录机器人账号中...
+2024-09-04 18:45:59,618	[INFO]	(robot.py:65)update_access_token	[botpy] access_token expires_in 1016
+2024-09-04 18:46:00,058	[INFO]	(client.py:181)_bot_init	[botpy] 程序启动...
+2024-09-04 18:46:00,060	[INFO]	(connection.py:60)multi_run	[botpy] 最大并发连接数: 1, 启动会话数: 1
+2024-09-04 18:46:00,060	[INFO]	(client.py:242)bot_connect	[botpy] 会话启动中...
+2024-09-04 18:46:00,060	[INFO]	(gateway.py:115)ws_connect	[botpy] 启动中...
+2024-09-04 18:46:00,216	[INFO]	(gateway.py:142)ws_identify	[botpy] 鉴权中...
+2024-09-04 18:46:00,312	[INFO]	(gateway.py:85)on_message	[botpy] 机器人「NekoBot-测试中」启动成功！
+2024-09-04 18:46:00,312	[INFO]	(gateway.py:223)_send_heart	[botpy] 心跳维持启动...
+2024-09-04 18:46:00,313	[INFO]	(main.py:104)on_ready	「NekoBot-测试中」准备好了喵~
+2024-09-04 19:16:00,081	[INFO]	(gateway.py:56)on_closed	[botpy] 关闭, 返回码: 4009, 返回信息: Session timed out
+2024-09-04 19:16:00,081	[INFO]	(gateway.py:134)ws_connect	[botpy] ws关闭, 停止接收消息!
+2024-09-04 19:16:05,090	[INFO]	(connection.py:60)multi_run	[botpy] 最大并发连接数: 1, 启动会话数: 1
+2024-09-04 19:16:05,090	[INFO]	(client.py:242)bot_connect	[botpy] 会话启动中...
+2024-09-04 19:16:05,091	[INFO]	(gateway.py:115)ws_connect	[botpy] 启动中...
+2024-09-04 19:16:05,242	[INFO]	(gateway.py:175)ws_resume	[botpy] 重连启动...
+2024-09-04 19:16:05,446	[INFO]	(robot.py:65)update_access_token	[botpy] access_token expires_in 7200
+2024-09-04 19:16:05,530	[INFO]	(gateway.py:90)on_message	[botpy] 机器人重连成功! 
+2024-09-04 19:16:05,531	[INFO]	(gateway.py:223)_send_heart	[botpy] 心跳维持启动...
+2024-09-04 19:46:05,108	[INFO]	(gateway.py:56)on_closed	[botpy] 关闭, 返回码: 4009, 返回信息: Session timed out
+2024-09-04 19:46:05,109	[INFO]	(gateway.py:134)ws_connect	[botpy] ws关闭, 停止接收消息!
+2024-09-04 19:46:10,116	[INFO]	(connection.py:60)multi_run	[botpy] 最大并发连接数: 1, 启动会话数: 1
+2024-09-04 19:46:10,117	[INFO]	(client.py:242)bot_connect	[botpy] 会话启动中...
+2024-09-04 19:46:10,117	[INFO]	(gateway.py:115)ws_connect	[botpy] 启动中...
+2024-09-04 19:46:10,300	[INFO]	(gateway.py:175)ws_resume	[botpy] 重连启动...
+2024-09-04 19:46:10,398	[INFO]	(gateway.py:90)on_message	[botpy] 机器人重连成功! 
+2024-09-04 19:46:10,398	[INFO]	(gateway.py:223)_send_heart	[botpy] 心跳维持启动...
+2024-09-04 20:01:23,869	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:01:24,439	[INFO]	(main.py:179)on_at_message_create	Neko
+2024-09-04 20:01:57,993	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:01:58,499	[INFO]	(main.py:179)on_at_message_create	Neko
+2024-09-04 20:02:35,659	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:02:36,261	[INFO]	(main.py:179)on_at_message_create	Neko
+2024-09-04 20:02:55,238	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:03:26,818	[INFO]	(client.py:162)_bot_login	[botpy] 登录机器人账号中...
+2024-09-04 20:03:26,997	[INFO]	(robot.py:65)update_access_token	[botpy] access_token expires_in 4358
+2024-09-04 20:03:27,451	[INFO]	(client.py:181)_bot_init	[botpy] 程序启动...
+2024-09-04 20:03:27,451	[INFO]	(connection.py:60)multi_run	[botpy] 最大并发连接数: 1, 启动会话数: 1
+2024-09-04 20:03:27,452	[INFO]	(client.py:242)bot_connect	[botpy] 会话启动中...
+2024-09-04 20:03:27,452	[INFO]	(gateway.py:115)ws_connect	[botpy] 启动中...
+2024-09-04 20:03:27,603	[INFO]	(gateway.py:142)ws_identify	[botpy] 鉴权中...
+2024-09-04 20:03:27,711	[INFO]	(gateway.py:85)on_message	[botpy] 机器人「NekoBot-测试中」启动成功！
+2024-09-04 20:03:27,711	[INFO]	(gateway.py:223)_send_heart	[botpy] 心跳维持启动...
+2024-09-04 20:03:27,711	[INFO]	(main.py:104)on_ready	「NekoBot-测试中」准备好了喵~
+2024-09-04 20:03:29,256	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:03:29,807	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:05:25,829	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:05:26,383	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:05:36,940	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:05:37,504	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:05:46,060	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:05:47,619	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:06:35,803	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:07:37,105	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:08:16,882	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:08:17,441	[INFO]	(main.py:179)on_at_message_create	Neko
+2024-09-04 20:09:26,793	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:09:27,324	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:10:05,059	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:10:05,666	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:10:15,622	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:10:16,145	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:10:54,847	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:10:56,527	[INFO]	(main.py:179)on_at_message_create	Neko
+2024-09-04 20:11:51,635	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:11:52,214	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:12:15,270	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:12:15,854	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:12:47,426	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:12:47,929	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:14:23,978	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:14:24,563	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:14:50,111	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:14:50,663	[INFO]	(main.py:179)on_at_message_create	Neko
+2024-09-04 20:15:07,206	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=L4njje2YTb3W6EJqicgAn0g&kti=ZpG3PAAAAAA&s=0&t=1720636346
+2024-09-04 20:15:07,725	[INFO]	(main.py:179)on_at_message_create	随缘
+2024-09-04 20:15:18,268	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:15:18,268	[INFO]	(main.py:179)on_at_message_create	Neko
+2024-09-04 20:16:11,121	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:16:11,730	[INFO]	(main.py:179)on_at_message_create	Neko
+2024-09-04 20:16:18,670	[INFO]	(main.py:107)on_at_message_create	http://thirdqq.qlogo.cn/g?b=oidb&k=GDN9NcpPZy9PzN3sVtrDYA&kti=ZnZ8mQAAAAE&s=0&t=1719040456
+2024-09-04 20:16:19,190	[INFO]	(main.py:179)on_at_message_create	Neko
+2024-09-04 20:33:27,468	[INFO]	(gateway.py:56)on_closed	[botpy] 关闭, 返回码: 4009, 返回信息: Session timed out
+2024-09-04 20:33:27,469	[INFO]	(gateway.py:134)ws_connect	[botpy] ws关闭, 停止接收消息!
+2024-09-04 20:33:32,460	[INFO]	(connection.py:60)multi_run	[botpy] 最大并发连接数: 1, 启动会话数: 1
+2024-09-04 20:33:32,461	[INFO]	(client.py:242)bot_connect	[botpy] 会话启动中...
+2024-09-04 20:33:32,461	[INFO]	(gateway.py:115)ws_connect	[botpy] 启动中...
+2024-09-04 20:33:32,639	[INFO]	(gateway.py:175)ws_resume	[botpy] 重连启动...
+2024-09-04 20:33:32,736	[INFO]	(gateway.py:90)on_message	[botpy] 机器人重连成功! 
+2024-09-04 20:33:32,736	[INFO]	(gateway.py:223)_send_heart	[botpy] 心跳维持启动...

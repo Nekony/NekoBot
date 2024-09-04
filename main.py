@@ -174,7 +174,26 @@ class MyClient(botpy.Client):
             if bool_1:
                 await os.remove("./1.png")
         if "/lucky" in message.content:
-            await message.reply(content=f"你的幸运值 {random.randint(0, 100)} 喵~")
+            luck_temp_1 = random.randint(1, 100)
+            match luck_temp_1:
+                case (luck_temp_1) if luck_temp_1 < 30:
+                    luck_1 = random.randint(0,40)
+                case (luck_temp_1) if 30 <= luck_temp_1 < 70:
+                    luck_1 = random.randint(41, 70)
+                case (luck_temp_1) if 70 <= luck_temp_1 < 95:
+                    luck_1 = random.randint(71, 90)
+                case (luck_temp_1) if luck_temp_1 >= 95:
+                    luck_1 = random.randint(91, 100)
+            await message.reply(content=f"你的幸运值 {luck_1} 喵~")
+            match luck_1:
+                case (luck_1) if luck_1 >= 85:
+                    await message.reply(content=f"运气很好喵~")
+                case (luck_1) if 60 <= luck_1 < 85:
+                    await message.reply(content=f"运气不错喵~")
+                case (luck_1) if 40 < luck_1 <= 60:
+                    await message.reply(content=f"运气不是很好喵~")
+                case (luck_1) if 0 < luck_1 <= 40:
+                    await message.reply(content=f"要不今天休息一天喵~")
         #输出触发Bot者名称
         _log.info(message.author.username)
 
