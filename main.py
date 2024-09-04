@@ -169,8 +169,10 @@ class MyClient(botpy.Client):
             print(payload)
             await generate50(payload)
             await message.reply(content=f"", file_image="./1.png")
-            await os.remove("./1.png")
             await message.reply(content="b50来了喵~")
+            bool_1 = os.path.isfile("./1.png")
+            if bool_1:
+                await os.remove("./1.png")
         #输出触发Bot者名称
         _log.info(message.author.username)
 
