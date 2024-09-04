@@ -9,14 +9,14 @@ sys.path.append('./src/libraries/')
 import botpy
 from botpy import logging
 from botpy.ext.cog_yaml import read
-from botpy.message import Message
+from botpy.message import GroupMessage, Message
 from maimaib50 import generate50 # type: ignore
 
 test_config = read(os.path.join(os.path.dirname(__file__), "config.yaml"))
 
-_log = logging.get_logger()
-
 maimai_list = ['拼机', '推分', '越级', '夜勤', '练底力', '练手法', '干饭', '抓绝赞', '收歌']
+
+_log = logging.get_logger()
 
 #计算单曲rating的函数
 def mai_rating(grading, acc):
@@ -98,49 +98,45 @@ def mai_rating(grading, acc):
     new_rating = int(rating)
     return new_rating
 
-
 class MyClient(botpy.Client):
-    #在Bot准备好后输出一条消息
     async def on_ready(self):
         _log.info(f"「{self.robot.name}」准备好了喵~")
 
-    async def on_at_message_create(self, message: Message):
-        _log.info(message.author.avatar)
-        #让频道主可以远程关闭程序
-        if "下线" in message.content:
-            if "Neko" in message.author.username:
-                await message.reply(content="下班喵~")
-                sys.exit(0)
-            else:
-                await message.reply(content="你谁喵~")
-        #计算单曲rating
+    async def on_group_at_message_create(self, message: GroupMessage):
         if "/rating" in message.content:
+            print(message.content)
             str1 = message.content
             str2 = str1.split()
-            grading = decimal.Decimal(str2[2])
-            acc = float(str2[3])
+            grading = decimal.Decimal(str2[1])
+            acc = float(str2[2])
             rating = mai_rating(grading, acc)
-            await message.reply(content=f"此曲Rating是 {rating}")
-            await message.reply(content="喵~")
             print(f"Rating:{rating}")
-        #给出随机建议
+            messageResult = await message._api.post_group_message(
+                group_openid=message.group_openid,
+                msg_type=0, 
+                msg_id=message.id,
+                content=f"\n此曲Rating是：{rating} 喵~")
         if "/今日份的舞萌" in message.content:
             temp_random = random.randint(1, 6)
             match temp_random:
                 case (temp_random) if temp_random == 1:
-                    await message.reply(content="拼个机喵~")
+                    mai_1 = "拼个机喵~"
                 case (temp_random) if temp_random == 2:
-                    await message.reply(content="去推分喵~")
+                    mai_1 = "去推分喵~"
                 case (temp_random) if temp_random == 3:
-                    await message.reply(content="越个级喵~")
+                    mai_1 = "越个级喵~"
                 case (temp_random) if temp_random == 4:
-                    await message.reply(content="晚上出勤喵~")
+                    mai_1 = "晚上出勤喵~"
                 case (temp_random) if temp_random == 5:
-                    await message.reply(content="练一练喵~")
+                    mai_1 = "练一练喵~"
                 case (temp_random) if temp_random == 6:
-                    await message.reply(content="吃饭去喵~")
+                    mai_1 = "吃饭去喵~"
+            messageResult = await message._api.post_group_message(
+                group_openid=message.group_openid,
+                msg_type=0, 
+                msg_id=message.id,
+                content=f"\n{mai_1}")
             print(f"今日份：{temp_random}")
-        #给出 宜/忌
         if "/舞萌运势" in message.content:
             temp_1 = random.randint(1, 3)
             temp_2 = random.randint(1, 3)
@@ -155,27 +151,14 @@ class MyClient(botpy.Client):
             temp_str_1 = "宜：" + f"{list_1[0]} "
             for c in range(1, len(list_1)):
                 temp_str_1 = temp_str_1 + f"{list_1[(c)]} "
-            await message.reply(content=f"{temp_str_1}")
             temp_str_2 = "忌：" + f"{list_2[0]} "
             for d in range(1, len(list_2)):
                 temp_str_2 = temp_str_2 + f"{list_2[(d)]} "
-            await message.reply(content=f"{temp_str_2}")
-            await message.reply(content="喵~")
-        #从水鱼查分器拿到b50并绘制成图
-        if "/b50" in message.content:
-            payload ={}
-            str3 = message.content
-            str4 = str3.split()
-            payload['username'] = f"{str4[2]}"
-            payload['b50'] = "True"
-            print(payload)
-            await generate50(payload)
-            await message.reply(content=f"", file_image="./1.png")
-            await message.reply(content="b50来了喵~")
-            bool_1 = os.path.isfile("./1.png")
-            if bool_1:
-                await os.remove("./1.png")
-        #给出一个有概率的0-100的幸运值
+            messageResult = await message._api.post_group_message(
+                group_openid=message.group_openid,
+                msg_type=0, 
+                msg_id=message.id,
+                content=f"\n{temp_str_1}\n{temp_str_2}\n喵~")
         if "/lucky" in message.content:
             luck_temp_1 = random.randint(1, 100)
             match luck_temp_1:
@@ -187,26 +170,61 @@ class MyClient(botpy.Client):
                     luck_1 = random.randint(71, 90)
                 case (luck_temp_1) if luck_temp_1 >= 95:
                     luck_1 = random.randint(91, 100)
-            await message.reply(content=f"你的幸运值 {luck_1} 喵~")
+            l1 = f"你的幸运值 {luck_1} 喵~"
             match luck_1:
                 case (luck_1) if luck_1 >= 85:
-                    await message.reply(content=f"运气很好喵~")
+                    l2 = f"运气很好喵~"
                 case (luck_1) if 60 <= luck_1 < 85:
-                    await message.reply(content=f"运气不错喵~")
+                    l2 = f"运气不错喵~"
                 case (luck_1) if 40 < luck_1 <= 60:
-                    await message.reply(content=f"运气不是很好喵~")
+                    l2 = f"运气不是很好喵~"
                 case (luck_1) if 0 < luck_1 <= 40:
-                    await message.reply(content=f"要不今天休息一天喵~")
-        #输出触发Bot者名称
-        _log.info(message.author.username)
+                    l2 = f"要不今天休息一天喵~"
+            messageResult = await message._api.post_group_message(
+                group_openid=message.group_openid,
+                msg_type=0, 
+                msg_id=message.id,
+                content=f"\n{l1}\n{l2}")
+        # if "/b50" in message.content:
+        #     payload ={}
+        #     str3 = message.content
+        #     str4 = str3.split()
+        #     payload['username'] = f"{str4[1]}"
+        #     payload['b50'] = "True"
+        #     print(payload)
+        #     await generate50(payload)
+        #     file_url = "127.0.0.1:5500/1.png"  # 这里需要填写上传的资源Url
+        #     uploadMedia = await message._api.post_group_file(
+        #         group_openid=message.group_openid, 
+        #         file_type=1, # 文件类型要对应上，具体支持的类型见方法说明
+        #         url=file_url # 文件Url
+        #     )
+
+        #     # 资源上传后，会得到Media，用于发送消息
+        #     await message._api.post_group_message(
+        #         group_openid=message.group_openid,
+        #         msg_type=7,  # 7表示富媒体类型
+        #         msg_id=message.id, 
+        #         media=uploadMedia
+        #     )
+        #     bool_1 = os.path.isfile("./1.png")
+        #     if bool_1:
+        #         await os.remove("./1.png")
+        if "/b50" in message.content:
+            messageResult = await message._api.post_group_message(
+                group_openid=message.group_openid,
+                msg_type=0, 
+                msg_id=message.id,
+                content=f"\n目前此Bot基于QQBot，目前无法上传本地图片，因此请在频道查询b50喵~")
+        _log.info(messageResult)
 
 
 if __name__ == "__main__":
     # 通过预设置的类型，设置需要监听的事件通道
     # intents = botpy.Intents.none()
-    # intents.public_guild_messages=True
+    # intents.public_messages=True
 
     # 通过kwargs，设置需要监听的事件通道
-    intents = botpy.Intents(public_guild_messages=True)
+    intents = botpy.Intents(public_messages=True)
     client = MyClient(intents=intents)
     client.run(appid=test_config["appid"], secret=test_config["secret"])
