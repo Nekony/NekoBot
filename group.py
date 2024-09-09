@@ -3,6 +3,9 @@ import os
 import sys
 import decimal
 import random
+import json
+from variable import alias_url, song_name_url
+import requests
 
 sys.path.append('./src/libraries/')
 
@@ -17,6 +20,28 @@ test_config = read(os.path.join(os.path.dirname(__file__), "config.yaml"))
 maimai_list = ['拼机', '推分', '越级', '夜勤', '练底力', '练手法', '干饭', '抓绝赞', '收歌']
 
 _log = logging.get_logger()
+
+def download(url1, url2):
+    done1 = 1
+    alias_file_temp = requests.get(url1)
+    # if alias_file_temp.status_code == 200:
+    #     done1 = 1
+    # else:
+    #     done1 = alias_file_temp.status_code
+    if done1 == 1:
+        with open('alias.json', 'w') as file1:
+            json.dump(alias_file_temp.text, file1)
+
+    done2 = 1
+    song_name_file_temp = requests.get(url2).json()
+    # if song_name_file_temp.status_code == 200:
+    #     done2 = 1
+    # else:
+    #     done2 = song_name_file_temp.status_code
+    if done2 == 1:
+        with open('sn.json', 'w') as file2:
+            json.dump(song_name_file_temp, file2)
+    return done1
 
 #计算单曲rating的函数
 def mai_rating(grading, acc):
@@ -103,6 +128,42 @@ class MyClient(botpy.Client):
         _log.info(f"「{self.robot.name}」准备好了喵~")
 
     async def on_group_at_message_create(self, message: GroupMessage):
+        sn_data = []
+        with open('alias.json', 'r') as file1:
+            a_data = json.loads(json.load(file1))
+        # with open('sn.json', 'r') as file2:
+        #     sn_data = file2
+        #     sn_data = file2
+        # sn_data = os.open('sn.json', os.O_RDONLY)
+        with open('sn.json', 'r') as  file2:
+            sn_data = json.load(file2)
+        reverse_dict = {}
+        for key, value_list in a_data.items():
+            for value in value_list:
+                if value in reverse_dict:
+                    # 如果值已经在反向字典中，添加当前键到该值的键列表中
+                    reverse_dict[value].append(key)
+                else:
+                    # 如果值不在反向字典中，为该值创建一个新的键列表并添加当前键
+                    reverse_dict[value] = [key]
+            await message.reply(content=f"目前数据库有{len(a_data)}首乐曲")
+        if "/查歌" in message.content:
+            str1 = message.content
+            str2 = str1.split()
+            i_1 = int(str2[1])
+            print(str2[2])
+            print(i_1)
+            if i_1 == 1:
+                s_1 = reverse_dict[f"{str2[2]}"]
+                print(s_1)
+                for dict in sn_data:
+                    if dict["id"] == s_1[0]:
+                        title = dict['title']
+                        print(title)
+                        await message.reply(content=f"\n{title}")
+                # await message.reply(content=f"{sn_data[]['title']}")
+            else:
+                await message.reply(content=f"{a_data[str2[2]]}")
         if "/rating" in message.content:
             print(message.content)
             str1 = message.content
@@ -216,6 +277,8 @@ class MyClient(botpy.Client):
                 msg_type=0, 
                 msg_id=message.id,
                 content=f"\n目前此Bot基于QQBot，目前无法上传本地图片，因此请在频道查询b50喵~")
+        if "/help" in message.content:
+            await message.reply(content="\n/rating <定级> <达成率>\n/今日份的舞萌\n/舞萌运势\n/b50 <水鱼账号>\n/lucky\n/查歌 <1/2> <别名/乐曲id>")
         _log.info(messageResult)
 
 
