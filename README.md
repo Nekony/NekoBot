@@ -2,6 +2,12 @@
 
 en / [zh](https://github.com/Nekony/NekoBot/blob/main/README_zh.md)
 
+# Tips
+
+This bot is non-standard grammar
+
+and, I find a /rating bug , attention please
+
 ## Illustrate
 
 NekoBot is a QQ bot designed for music games.
