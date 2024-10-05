@@ -2,6 +2,12 @@
 
 [en](https://github.com/Nekony/NekoBot/blob/main/README.md) / zh
 
+## Tips
+
+此Bot语法并不规范
+
+/rating有计算错误问题，请注意
+
 ## 介绍
 
 NekoBot是一个为音游而设计的QQ机器人。
